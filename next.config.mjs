@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  turbopack: {
-    root: "/Users/michaelshaw/Projects/agentarcade",
-  },
-};
+const nextConfig = {};
 
 export default nextConfig;
