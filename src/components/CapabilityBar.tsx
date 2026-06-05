@@ -43,19 +43,16 @@ export default function CapabilityBar({ label, score }: CapabilityBarProps) {
   }, [score]);
 
   return (
-    <div ref={containerRef} className="mb-4" data-od-id={`capability-${label.toLowerCase().replace(/\s+/g, "-")}`}>
+    <div ref={containerRef} className="mb-4">
       <div className="flex items-center justify-between mb-1.5">
         <span className="text-sm text-fg">{label}</span>
-        <span className="text-sm font-medium text-muted">{score}%</span>
+        <span className="num text-sm font-medium text-muted">{score}%</span>
       </div>
-      <div className="h-2 bg-border rounded-full overflow-hidden">
+      <div className="h-2 rounded-full bg-border overflow-hidden">
         <div
           ref={barRef}
-          className="animate-bar h-full rounded-full transition-none"
-          style={{
-            width: "0%",
-            background: "oklch(52% 0.14 265)",
-          }}
+          className="h-full rounded-full"
+          style={{ width: "0%", background: "var(--color-accent)" }}
         />
       </div>
     </div>

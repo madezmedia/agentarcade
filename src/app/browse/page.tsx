@@ -5,7 +5,7 @@ const sortOptions = ["Popular", "Price low", "Price high", "Rating"];
 
 export default function BrowsePage() {
   return (
-    <div className="mx-auto flex max-w-content gap-8 px-6 py-8">
+    <div className="container-main flex gap-8 py-8">
       <aside className="hidden w-[220px] shrink-0 sm:block">
         <BrowseClient
           agents={agents}

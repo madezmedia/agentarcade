@@ -61,15 +61,8 @@ export default function StatCounter({
   }, [value, prefix, suffix, decimals]);
 
   return (
-    <div
-      ref={containerRef}
-      className="animate-counter text-center"
-      data-od-id={`stat-${label.toLowerCase().replace(/\s+/g, "-")}`}
-    >
-      <span
-        ref={countRef}
-        className="block font-display text-4xl md:text-5xl font-semibold text-fg mb-1"
-      >
+    <div ref={containerRef} className="flex flex-col items-center gap-1">
+      <span ref={countRef} className="font-display text-4xl md:text-5xl font-semibold text-fg">
         0
       </span>
       <span className="text-sm text-muted">{label}</span>

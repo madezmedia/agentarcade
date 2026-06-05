@@ -51,19 +51,15 @@ export default function MetricCard({ value, label, change, changeType = "up", su
   })();
 
   return (
-    <div
-      ref={ref}
-      className="animate-hidden bg-surface border border-border rounded-card p-5 metric-card-animate"
-      data-od-id={`metric-${label.toLowerCase().replace(/\s+/g, "-")}`}
-    >
-      <span className="block font-display text-3xl font-semibold mb-1" style={{ color: "oklch(52% 0.14 265)" }}>
+    <div ref={ref} className="card p-5">
+      <span className="block font-display text-3xl font-semibold mb-1 text-accent num">
         {displayValue}
       </span>
       <div className="flex items-center gap-2">
         <span className="text-sm text-muted">{label}</span>
         {change && (
-          <span className={`text-xs font-medium ${isPositive ? "text-success" : "text-danger"}`}>
-            {isPositive ? "↑ " : "↓ "}{change}
+          <span className={`text-xs font-medium num ${isPositive ? "text-[var(--color-success)]" : "text-[var(--color-danger)]"}`}>
+            {isPositive ? "\u2191 " : "\u2193 "}{change}
           </span>
         )}
       </div>

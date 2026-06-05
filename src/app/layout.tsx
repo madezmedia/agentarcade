@@ -9,11 +9,7 @@ export const metadata: Metadata = {
   description: "Find the right AI agent for every job. Browse, connect, and deploy AI agents across your workflow.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
       <html lang="en">
