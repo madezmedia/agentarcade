@@ -1,34 +1,41 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
-:root {
-  --bg: oklch(99% 0.003 250);
-  --surface: oklch(100% 0 0);
-  --fg: oklch(18% 0.012 250);
-  --muted: oklch(54% 0.012 250);
-  --border: oklch(92% 0.005 250);
-  --accent: oklch(52% 0.14 265);
-  --success: oklch(55% 0.12 145);
-  --warn: oklch(60% 0.10 75);
-  --danger: oklch(50% 0.14 25);
-}
-
-* {
-  box-sizing: border-box;
+@theme {
+  --color-bg: oklch(99% 0.003 250);
+  --color-surface: oklch(100% 0 0);
+  --color-fg: oklch(18% 0.012 250);
+  --color-muted: oklch(54% 0.012 250);
+  --color-border: oklch(92% 0.005 250);
+  --color-accent: oklch(52% 0.14 265);
+  --color-success: oklch(55% 0.12 145);
+  --color-warn: oklch(60% 0.10 75);
+  --color-danger: oklch(50% 0.14 25);
+  --color-accent-soft: oklch(65% 0.08 265);
+  --color-accent-1: oklch(60% 0.12 200);
+  --color-accent-2: oklch(60% 0.12 300);
+  --color-accent-3: oklch(55% 0.12 160);
+  --color-accent-4: oklch(58% 0.12 330);
+  --color-accent-5: oklch(62% 0.10 25);
+  --color-accent-6: oklch(56% 0.12 140);
+  --color-accent-7: oklch(63% 0.10 80);
+  --color-accent-8: oklch(59% 0.11 190);
+  --font-family-display: "Georgia", "Charter", "Iowan Old Style", "serif";
+  --font-family-sans: "Inter", "system-ui", "sans-serif";
+  --font-family-mono: "JetBrains Mono", "monospace";
+  --radius-button: 10px;
+  --radius-card: 14px;
+  --container-landing: 1120px;
+  --container-content: 1200px;
 }
 
 body {
-  color: var(--fg);
-  background: var(--bg);
-  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  font-family: var(--font-family-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Frosted glass effect */
 .frosted-glass {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -36,7 +43,6 @@ body {
   border-bottom: 1px solid oklch(92% 0.005 250 / 0.5);
 }
 
-/* Animation classes for anime.js */
 .animate-hidden {
   opacity: 0;
   transform: translateY(20px);
@@ -55,7 +61,6 @@ body {
   width: 0 !important;
 }
 
-/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .animate-hidden,
   .animate-hidden-stagger,
@@ -64,10 +69,8 @@ body {
     opacity: 1;
     transform: none;
     width: auto !important;
-    animation: none;
-    transition: none;
   }
-  
+
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
@@ -75,7 +78,6 @@ body {
   }
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -85,7 +87,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: oklch(92% 0.005 250);
+  background: var(--color-border);
   border-radius: 3px;
 }
 

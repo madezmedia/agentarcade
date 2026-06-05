@@ -1,13 +1,13 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-border mt-24" data-od-id="footer">
-      <div className="max-w-content mx-auto px-6 md:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-muted">
-          &copy; {new Date().getFullYear()} AgentArcade. All rights reserved.
-        </p>
-        <p className="text-sm text-muted">
-          Find the right AI agent for every job.
-        </p>
+    <footer className="border-t border-border px-6 py-8">
+      <div className="mx-auto flex max-w-content items-center justify-between">
+        <span className="font-display text-sm font-bold tracking-tight text-fg">
+          AgentArcade
+        </span>
+        <span className="text-xs text-muted">
+          © 2026 AgentArcade. All rights reserved.
+        </span>
       </div>
     </footer>
   );
