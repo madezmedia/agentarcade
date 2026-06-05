@@ -2,26 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: oklch(99% 0.003 250);
+  --surface: oklch(100% 0 0);
+  --fg: oklch(18% 0.012 250);
+  --muted: oklch(54% 0.012 250);
+  --border: oklch(92% 0.005 250);
+  --accent: oklch(52% 0.14 265);
+  --success: oklch(55% 0.12 145);
+  --warn: oklch(60% 0.10 75);
+  --danger: oklch(50% 0.14 25);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Frosted glass effect */
+.frosted-glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: oklch(100% 0 0 / 0.75);
+  border-bottom: 1px solid oklch(92% 0.005 250 / 0.5);
+}
+
+/* Animation classes for anime.js */
+.animate-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.animate-hidden-stagger {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.animate-counter {
+  opacity: 0;
+}
+
+.animate-bar {
+  width: 0 !important;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-hidden,
+  .animate-hidden-stagger,
+  .animate-counter,
+  .animate-bar {
+    opacity: 1;
+    transform: none;
+    width: auto !important;
+    animation: none;
+    transition: none;
   }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(92% 0.005 250);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(80% 0.005 250);
 }
