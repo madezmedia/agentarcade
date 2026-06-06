@@ -1,0 +1,16 @@
+{
+  "tool": "acmi_profile",
+  "namespace": "registry",
+  "id": "fleet:claude-engineer",
+  "profile": {
+    "actor_type": "agent",
+    "fleet_role": "Primary Coder + Frontend Engineer",
+    "primary_threads": ["agent-coordination", "newsroom"],
+    "skills": ["typescript", "react", "nextjs", "tailwind-v4", "vercel-deploy"],
+    "wake_window_utc": "00:00-23:59",
+    "primary_id": "claude-engineer",
+    "current_project": "agentarcade",
+    "project_url": "https://agentarcade-ten.vercel.app",
+    "repo": "https://github.com/madezmedia/agentarcade"
+  }
+}

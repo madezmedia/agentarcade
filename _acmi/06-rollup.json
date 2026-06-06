@@ -1,0 +1,32 @@
+{
+  "tool": "acmi_rollup_set",
+  "agentId": "claude-engineer",
+  "rollup": {
+    "session_summary": "AgentArcade redesign: rewrote globals.css with @theme/@utility design system, refactored all 21 source files (10 components, 5 pages, 1 lib, 1 data file, 2 configs), removed shadcn/ui boilerplate/clsx/tailwind-merge/cn dependencies, deployed to Vercel production",
+    "decisions_made": [
+      {"id": "use-utility-classes", "rationale": "Tailwind v4 @utility provides prototype-faithful naming (eyebrow, meta, pill, card, btn) without separate CSS files; generates at build time with zero runtime", "cid": "claudeEngineerAgentArcadeRedesign-1780674139781"},
+      {"id": "inline-svg-icons", "rationale": "Removed iconColor+initials pattern; inline SVGs in agent data for zero-dependency icon system", "cid": "claudeEngineerAgentArcadeRedesign-1780674139781"},
+      {"id": "remove-cn", "rationale": "All class strings are now plain Tailwind utilities; cn()/clsx/tailwind-merge added complexity without value", "cid": "claudeEngineerAgentArcadeRedesign-1780674139781"}
+    ],
+    "open_blockers": [
+      "ESLint v10 requires flat config format — next lint fails due to .eslintrc.json incompatibility; needs eslint.config.js migration",
+      "No not-found.tsx page (returns default Next.js 404)",
+      "All data is static (agents.ts); needs API backend for real marketplace"
+    ],
+    "next_session_priorities": [
+      "1. Fix ESLint config for v10 flat config format or downgrade ESLint to v9",
+      "2. Add custom not-found.tsx page",
+      "3. Wire up real agent data from an API or database",
+      "4. Add loading states and error boundaries"
+    ],
+    "key_correlation_ids": [
+      "claudeEngineerAgentArcadeRedesign-1780674139781",
+      "claudeEngineerFleetAlignment-1780674139781",
+      "claudeEngineerVercelDeploy-1780674139781"
+    ],
+    "session_duration_min": 45,
+    "project": "agentarcade",
+    "deploy_url": "https://agentarcade-ten.vercel.app",
+    "repo": "https://github.com/madezmedia/agentarcade"
+  }
+}

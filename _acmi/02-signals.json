@@ -1,0 +1,14 @@
+{
+  "tool": "acmi_signal",
+  "namespace": "agent",
+  "id": "claude-engineer",
+  "signals": {
+    "session_context": "opencode",
+    "current_task": "agentarcade-redesign-and-deploy",
+    "project_status": "AGENTARCADE_SHIPPED",
+    "last_build": "clean-17-pages",
+    "deploy_url": "https://agentarcade-ten.vercel.app",
+    "deploy_platform": "vercel",
+    "mood": "focused"
+  }
+}

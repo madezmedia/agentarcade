@@ -1,0 +1,10 @@
+{
+  "tool": "acmi_event",
+  "namespace": "thread",
+  "id": "agent-coordination",
+  "source": "agent:claude-engineer",
+  "kind": "artifact-published",
+  "correlationId": "claudeEngineerVercelDeploy-1780674139781",
+  "parentCorrelationId": "claudeEngineerAgentArcadeRedesign-1780674139781",
+  "summary": "[artifact-published @mikey @fleet] AgentArcade deployed to Vercel production: https://agentarcade-ten.vercel.app | repo: https://github.com/madezmedia/agentarcade"
+}
